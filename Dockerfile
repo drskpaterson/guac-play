@@ -29,7 +29,8 @@ RUN dnf -y install \
            openbox \
            tigervnc-server \
            wmctrl \
-           origin-clients \
+           origin-clients
+
 RUN dnf -y group install gnome;
 RUN dnf -y clean all;
 
