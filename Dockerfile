@@ -11,6 +11,10 @@ LABEL vendor="CentOS"
 ENV HOME /home/developer
 
 # Add the needed packages
+RUN yum -y swap -- remove fakesystemd -- install systemd systemd-libs
+RUN yum -y install dnf
+RUN yum -y update; yum clean all; \
+
 RUN    dnf -y update \
     && dnf -y install \
            gettext \
@@ -24,7 +28,7 @@ RUN    dnf -y update \
            tigervnc-server \
            wmctrl \
            origin-clients \
-    && dnf -y groupinstall gnome
+    && dnf -y group install gnome
     && dnf -y clean all
 
 #yum -y groups install "GNOME Desktop"
