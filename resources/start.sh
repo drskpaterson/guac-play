@@ -61,7 +61,7 @@ then
   chmod 740 .
   echo 'VNCPASS' | vncpasswd -f > passwd
   chmod 600 passwd
-  echo 'X-GNOME-Provides=windowmanager' >> /usr/share/applications/openbox.desktop
+#  echo 'X-GNOME-Provides=windowmanager' >> /usr/share/applications/openbox.desktop
   echo 'openbox-session &' > xstartup
   chmod a+x xstartup
 fi
