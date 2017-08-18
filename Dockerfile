@@ -11,7 +11,10 @@ LABEL vendor="CentOS"
 ENV HOME /home/developer
 
 # Add the needed packages
-RUN yum -y update; yum install dnf; \
+RUN yum -y update;
+RUN yum install epel-release -y;
+RUN yum install dnf;
+RUN yum -y update; yum clean all;
 
 RUN    dnf -y update \
     && dnf -y install \
