@@ -17,8 +17,8 @@ RUN yum -y install dnf;
 RUN yum -y update; yum clean all;
 RUN yum -y install centos-release-openshift-origin;
 
-RUN    dnf -y update \
-    && dnf -y install \
+RUN dnf -y update;
+RUN dnf -y install \
            gettext \
            gtk3 \
            java-1.8.0-openjdk-devel \
@@ -30,8 +30,8 @@ RUN    dnf -y update \
            tigervnc-server \
            wmctrl \
            origin-clients \
-    && dnf -y group install gnome
-    && dnf -y clean all
+RUN dnf -y group install gnome;
+RUN dnf -y clean all;
 
 #yum -y group install "GNOME Desktop"
 
