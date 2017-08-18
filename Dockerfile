@@ -34,8 +34,6 @@ RUN dnf -y install \
 RUN dnf -y group install gnome;
 RUN dnf -y clean all;
 
-#yum -y group install "GNOME Desktop"
-
 # Create installation directory and set the openbox window manager
 # configuration for all users
 RUN    mkdir -p /usr/share/devstudio \
@@ -66,6 +64,6 @@ USER 1000
 
 CMD /usr/local/bin/start.sh
 
-# No volume support yet, so everything in /home/jbdsuser is ephemeral.
+# No volume support yet, so everything in /home/developer is ephemeral.
 # Eventually this can be a mounted persistent volume so each user can
 # have a persistent maven repository, workspace, etc.
