@@ -11,9 +11,7 @@ LABEL vendor="CentOS"
 ENV HOME /home/developer
 
 # Add the needed packages
-RUN yum -y swap -- remove fakesystemd -- install systemd systemd-libs
-RUN yum -y install dnf
-RUN yum -y update; yum clean all; \
+RUN yum -y update; yum install dnf; \
 
 RUN    dnf -y update \
     && dnf -y install \
@@ -31,7 +29,7 @@ RUN    dnf -y update \
     && dnf -y group install gnome
     && dnf -y clean all
 
-#yum -y groups install "GNOME Desktop"
+#yum -y group install "GNOME Desktop"
 
 # Create installation directory and set the openbox window manager
 # configuration for all users
