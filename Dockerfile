@@ -16,6 +16,7 @@ RUN yum install epel-release -y;
 RUN yum -y install dnf;
 RUN yum -y update; yum clean all;
 RUN yum -y install centos-release-openshift-origin;
+RUN yum -y groups install "GNOME Desktop";
 
 RUN dnf -y update;
 RUN dnf -y install \
@@ -31,7 +32,6 @@ RUN dnf -y install \
            wmctrl \
            origin-clients
 
-RUN dnf -y group install gnome;
 RUN dnf -y clean all;
 
 # Create installation directory and set the openbox window manager

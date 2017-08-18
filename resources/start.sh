@@ -71,8 +71,8 @@ echo "Launching  Xvnc which launches openbox  ..."
 cd ..
 vncserver :1 -name 'Cavalcade Desktop' -geometry $SCREEN_SIZE -depth 24
 
-#echo "Starting GNOME ..."
-#startx
+echo "Starting GNOME ..."
+startx
 
 echo "Loop to prevent container from exiting"
 echo "CTRL-C to exit or run 'docker stop <container>'"
