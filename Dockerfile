@@ -36,10 +36,8 @@ RUN dnf -y clean all;
 
 # Create installation directory and set the openbox window manager
 # configuration for all users
-RUN    mkdir -p /usr/share/devstudio \
-    && echo 'export DISPLAY=:1' >> /etc/xdg/openbox/environment \
-    && echo "/usr/share/devstudio/devstudio -nosplash -data ${HOME}/workspace &" \
-             >> /etc/xdg/openbox/autostart
+RUN    echo 'export DISPLAY=:1' >> /etc/xdg/openbox/environment \
+    && echo 'exec gnome-session' >> /etc/xdg/openbox/autostart
 
 
 
