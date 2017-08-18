@@ -61,6 +61,7 @@ then
   chmod 740 .
   echo 'VNCPASS' | vncpasswd -f > passwd
   chmod 600 passwd
+  echo 'X-GNOME-Provides=windowmanager' >> /usr/share/applications/openbox.desktop
   echo 'openbox-session &' > xstartup
   chmod a+x xstartup
 fi
@@ -71,9 +72,9 @@ echo "Launching  Xvnc which launches openbox  ..."
 cd ..
 vncserver :1 -name 'Cavalcade Desktop' -geometry $SCREEN_SIZE -depth 24
 
-echo "Starting shell ..."
-#startx
-/bin/bash
+#echo "Starting shell ..."
+##startx
+#/bin/bash
 
 echo "Loop to prevent container from exiting"
 echo "CTRL-C to exit or run 'docker stop <container>'"
