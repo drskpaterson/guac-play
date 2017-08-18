@@ -13,7 +13,7 @@ ENV HOME /home/developer
 # Add the needed packages
 RUN yum -y update;
 RUN yum install epel-release -y;
-RUN yum install dnf;
+RUN yum -y install dnf;
 RUN yum -y update; yum clean all;
 
 RUN    dnf -y update \
