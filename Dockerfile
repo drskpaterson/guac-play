@@ -15,6 +15,7 @@ RUN yum -y update;
 RUN yum install epel-release -y;
 RUN yum -y install dnf;
 RUN yum -y update; yum clean all;
+RUN yum -y install centos-release-openshift-origin;
 
 RUN    dnf -y update \
     && dnf -y install \
